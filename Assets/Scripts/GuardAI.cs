@@ -21,7 +21,18 @@ namespace SugarRun
 		// Update is called once per frame
 		void Update()
 		{
-
+			if (agent.remainingDistance < 0.2f)
+			{
+				if (goingToB)
+				{
+					agent.SetDestination(pointB.position);
+				}
+				else
+				{
+					agent.SetDestination(pointA.position);
+				}
+				goingToB = !goingToB;
+			}
 		}
 	}
 }

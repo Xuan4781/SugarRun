@@ -1,10 +1,12 @@
 using UnityEngine;
-
+using TMPro;
 
 namespace SugarRun
 {
 	public class PlayerReset : MonoBehaviour
 	{
+		public TextMeshProUGUI messageText;
+		
 		private Vector3 startPosition;
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		void Start()
@@ -16,8 +18,9 @@ namespace SugarRun
 		{
 			if (other.gameObject.name == "Guard")
 			{
-				Debug.Log("Player Caught! Resetting...");
+				
 				transform.position = startPosition;
+				messageText.text = "Caught!";
 			}
 
 		}
